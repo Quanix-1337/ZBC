@@ -3,7 +3,7 @@
 @model List<Article>
 
 @{
-    ViewData["Title"] = "Manage Articles";
+    ViewData["Title"] = "Administre lån og retur";
 }
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -16,10 +16,17 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Published On</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>Date</th>
+                <th>Price</th>
+                <th>Purchased</th>
+                <th>BorrowID</th>
+                <th>UserID</th>
+                <th>MaterialID</th>
+                <th>B-Date</th>
+                <th>R-Date</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,10 +34,17 @@
             @foreach (var article in Model)
             {
                 <tr>
-                    <td>@article.ArticleTitle</td>
-                    <td>@article.ArticleDescription</td>
-                    <td>@article.ArticleCategory</td>
-                    <td>@article.PublicationDateTime.ToShortDateString()</td>
+                    <td>@article.Bookname</td>
+                    <td>@article.Author</td>
+                    <td>@article.Publisher</td>
+                    <td>@article.Date.ToShortDateString()</td>
+                    <td>@article.Price</td>
+                    <td>@article.Purchased</td>
+                    <td>@article.BorrowID</td>
+                    <td>@article.UserID</td>
+                    <td>@article.MaterialID</td>
+                    <td>@article.BorrowDate.ToShortDateString()</td>
+                    <td>@article.ReturnDate.ToShortDateString()</td>
                     <td>
                         <a asp-action="Edit" asp-route-articleId="@article.ArticleId" class="btn btn-info edit-btn" data-id="@article.ArticleId">Edit</a>
                         <a asp-action="Delete" asp-route-articleId="@article.ArticleId" class="btn btn-danger delete-btn" data-id="@article.ArticleId">Delete</a>

@@ -55,10 +55,21 @@ public partial class ZBCDBContext : DbContext
         modelBuilder.Entity<Article>(entity =>
         {
             entity.Property(e => e.ArticleId).HasColumnName("ArticleID");
-            entity.Property(e => e.ArticleCategory).HasMaxLength(64);
+            entity.Property(e => e.Publisher).HasMaxLength(64);
             entity.Property(e => e.ArticleSummary).HasMaxLength(512);
-            entity.Property(e => e.ArticleTitle).HasMaxLength(256);
-            entity.Property(e => e.PublicationDateTime)
+            entity.Property(e => e.Bookname).HasMaxLength(256);
+            entity.Property(e => e.Price).HasMaxLength(256);
+            entity.Property(e => e.Purchased).HasMaxLength(256);
+            entity.Property(e => e.BorrowID).HasMaxLength(256);
+            entity.Property(e => e.UserID).HasMaxLength(256);
+            entity.Property(e => e.MaterialID).HasMaxLength(256);
+            entity.Property(e => e.Date)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.BorrowDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.ReturnDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
         });

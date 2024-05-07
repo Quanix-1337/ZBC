@@ -15,20 +15,48 @@
     <form id="articleForm" asp-action="SaveNewArticle" asp-controller="Article" method="post">
         <input type="hidden" asp-for="ArticleId" />
         <div class="form-group">
-            <label asp-for="ArticleTitle"></label>
-            <input asp-for="ArticleTitle" class="form-control" />
+            <label asp-for="Bookname"></label>
+            <input asp-for="Bookname" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="ArticleDescription"></label>
-            <textarea asp-for="ArticleDescription" class="form-control"></textarea>
+            <label asp-for="Author"></label>
+            <textarea asp-for="Author" class="form-control"></textarea>
         </div>
         <div class="form-group">
-            <label asp-for="ArticleCategory"></label>
-            <input asp-for="ArticleCategory" class="form-control" />
+            <label asp-for="Publisher"></label>
+            <input asp-for="Publisher" class="form-control" />
         </div>
         <div class="form-group">
-            <label asp-for="PublicationDateTime"></label>
-            <input asp-for="PublicationDateTime" class="form-control" type="date" />
+            <label asp-for="Date"></label>
+            <input asp-for="Date" class="form-control" type="date" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Purchased"></label>
+            <input asp-for="Purchased" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BorrowID"></label>
+            <input asp-for="BorrowID" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserID"></label>
+            <input asp-for="UserID" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="MaterialID"></label>
+            <input asp-for="MaterialID" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="BorrowDate"></label>
+            <input asp-for="BorrowDate" class="form-control" type="date" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ReturnDate"></label>
+            <input asp-for="ReturnDate" class="form-control" type="date" />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form> 

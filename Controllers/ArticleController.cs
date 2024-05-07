@@ -79,7 +79,7 @@ namespace ZBC.Controllers
 
         public async Task<IActionResult> NewArticle()
         {
-            var model = new Article{ PublicationDateTime = DateTime.Today };
+            var model = new Article{ Date = DateTime.Today };
             return View(model);
         }
         [HttpPost]
